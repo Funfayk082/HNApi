@@ -12,8 +12,4 @@ import java.util.Optional;
 public interface AnswerRepository extends JpaRepository<Answer, Long> {
     Optional<Answer> findAnswerByOrderId(Long orderId);
 
-    @Transactional
-    @Modifying
-    @Query("UPDATE Answer a SET a.status=:status WHERE a.id =:id")
-    void updateAnswerById(@NonNull Long id, @NonNull String status);
 }

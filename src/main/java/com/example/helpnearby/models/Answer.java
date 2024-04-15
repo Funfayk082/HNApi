@@ -6,7 +6,6 @@ import org.hibernate.annotations.DynamicUpdate;
 
 @Data
 @Entity
-@DynamicUpdate
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder

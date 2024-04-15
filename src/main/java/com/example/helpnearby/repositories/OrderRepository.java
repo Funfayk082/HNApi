@@ -13,9 +13,4 @@ import java.util.List;
 @Repository
 public interface OrderRepository extends JpaRepository<Order, Long> {
     List<Order> findAllByCityName(String name);
-
-    @Transactional
-    @Modifying
-    @Query("UPDATE Order o SET o.status=:status WHERE o.id =:id")
-    void updateOrderById(@NonNull Long id, @NonNull String status);
 }

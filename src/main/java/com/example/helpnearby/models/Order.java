@@ -12,7 +12,6 @@ import org.hibernate.annotations.processing.SQL;
 @Data
 @Entity
 @Table(name = "orderTable")
-@DynamicUpdate
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
