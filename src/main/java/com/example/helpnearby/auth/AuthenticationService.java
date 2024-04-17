@@ -72,11 +72,11 @@ public class AuthenticationService {
         return new Token(accessToken, refreshToken);
     }
 
-    public Token refresh(RefreshTokenDto refreshTokenDto) {
-        var login = jwtService.extractLogin(refreshTokenDto.getRefreshToken());
-        var role = jwtService.extractRole(refreshTokenDto.getRefreshToken());
+    public Token refresh(String refreshToken) {
+        var login = jwtService.extractLogin(refreshToken);
+        var role = jwtService.extractRole(refreshToken);
         var accessToken = jwtService.generateAccessToken(login, role);
-        var refreshToken = jwtService.generateRefreshToken(login);
-        return new Token(accessToken, refreshToken);
+        var newRefreshToken = jwtService.generateRefreshToken(login);
+        return new Token(accessToken, newRefreshToken);
     }
 }

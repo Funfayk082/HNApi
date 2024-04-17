@@ -46,7 +46,7 @@ public class AuthenticationController {
             description = "User's token refreshed successfully",
             content = @Content(mediaType = "application/json")
     )
-    public ResponseEntity<Token> refresh(@RequestBody RefreshTokenDto token) {
+    public ResponseEntity<Token> refresh(@RequestBody String token) {
         return ResponseEntity.ok(authenticationService.refresh(token));
     }
 }
