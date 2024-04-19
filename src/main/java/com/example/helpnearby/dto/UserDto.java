@@ -12,4 +12,5 @@ public class UserDto {
     private String cityName;
     private Long groupId;
     private String groupName;
+    private String fbToken;
 }

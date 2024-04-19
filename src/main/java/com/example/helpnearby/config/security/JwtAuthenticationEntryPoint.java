@@ -19,7 +19,7 @@ public class JwtAuthenticationEntryPoint implements AuthenticationEntryPoint {
         response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
         response.setContentType("appplication/json");
         response.setCharacterEncoding("UTF-8");
-        ErrorResponseDto accessExceptionResponse = new ErrorResponseDto(HttpStatus.UNAUTHORIZED.getReasonPhrase(), "Вы являетесь неизвестным пользователем");
+        ErrorResponseDto accessExceptionResponse = new ErrorResponseDto("Вы являетесь неизвестным пользователем");
         response.getWriter().write(convertObjectToJson(accessExceptionResponse));
     }
 

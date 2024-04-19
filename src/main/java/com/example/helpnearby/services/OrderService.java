@@ -11,10 +11,12 @@ import java.util.List;
 @Service
 public class OrderService {
     private final OrderRepository orderRepository;
+    private final MessageService messageService;
     private final ModelMapper mapper;
 
-    public OrderService(OrderRepository orderRepository, ModelMapper mapper) {
+    public OrderService(OrderRepository orderRepository, MessageService messageService, ModelMapper mapper) {
         this.orderRepository = orderRepository;
+        this.messageService = messageService;
         this.mapper = mapper;
     }
 
@@ -24,6 +26,7 @@ public class OrderService {
 
     public Long save(OrderDto order) {
         Order newOrder = mapper.map(order, Order.class);
+        messageService.sendMessage();
         return orderRepository.save(newOrder).getId();
     }
 }

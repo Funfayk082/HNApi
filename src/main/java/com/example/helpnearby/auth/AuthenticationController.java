@@ -1,7 +1,6 @@
 package com.example.helpnearby.auth;
 
 import com.example.helpnearby.dto.AuthUserDto;
-import com.example.helpnearby.dto.RefreshTokenDto;
 import com.example.helpnearby.dto.RegisterUserDto;
 import com.example.helpnearby.dto.Token;
 import io.swagger.v3.oas.annotations.media.Content;

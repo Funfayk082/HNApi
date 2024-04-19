@@ -26,4 +26,6 @@ public class User {
     private String contactNumber;
     @OneToOne(cascade = CascadeType.ALL)
     private AuthUser authUser;
+    @Column(nullable = false)
+    private String fbToken;
 }
